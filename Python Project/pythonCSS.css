@@ -15,7 +15,10 @@
 img{
 	vertical-align: top;
 }
-
+input{
+	padding:7px;
+	color:grey;
+}
 .textandsearch{
 	display: inline-block;
 	text-align: center;
@@ -78,9 +81,11 @@ button{
 	font-size:18px;
 }
 .mainleft ul{
-	margin: 0px, auto;
 	line-height: 30px;
-	text-decoration: underline;
+	text-decoration: underline;	
+}
+.mainleft li{
+	color: yellow;
 }
 .mainright{
 	width:600px;
@@ -135,9 +140,11 @@ button{
 }
 .explan_left ul{
 	margin-top: 0px;
+	list-style-type: square;
 }
 .explan_right ul{
 	margin-top: 0px;
+	list-style-type: square;
 }
 /*----------------------------------------------------*/
 #sub{
