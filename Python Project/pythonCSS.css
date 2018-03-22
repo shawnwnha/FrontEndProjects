@@ -12,8 +12,9 @@
 	padding: 20px;
 }
 
-img{
+#header img{
 	vertical-align: top;
+	width:400px;
 }
 input{
 	padding:7px;
@@ -42,7 +43,9 @@ input{
 	border-radius: 10px;
 	box-shadow: 3px 3px black;
 }
-
+.search input{
+	width:200px;
+}
 button{
 	border-radius: 3px;
 	background-color: #245076;
