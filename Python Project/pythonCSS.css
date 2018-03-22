@@ -1,0 +1,157 @@
+#background{
+	width:970px;
+	background-color: #245076;
+	color:white;
+	font-family: "Arial", Arial, Sans-serif;
+}
+
+/*----------------------------------------------------*/
+
+#header{
+	display: inline-block;
+	padding: 20px;
+}
+
+img{
+	vertical-align: top;
+}
+
+.textandsearch{
+	display: inline-block;
+	text-align: center;
+	position: absolute;
+	top:10px;
+	left:700px;
+}
+
+.textandsearch p{
+	text-align: center;
+	text-indent: 35px;
+	height: 13px;
+}
+
+.search{
+	background-color: #444444;
+	display: inline-block;
+	width: 250px;
+	height: 70px;
+	line-height: 70px;
+	border-radius: 10px;
+	box-shadow: 3px 3px black;
+}
+
+button{
+	border-radius: 3px;
+	background-color: #245076;
+	width:40px;
+	height:30px;
+	color:white;
+}
+
+/*----------------------------------------------------*/
+#menu{
+	text-align: center;
+	width:800px;
+	height: 50px;
+	background-color: #3e7aad;
+	display: inline-block;
+	border-radius: 10px;
+	box-shadow: 2px 2px black;
+	font-size: 20px;
+	margin:0px 85px 0px 85px;
+}
+#menu p{
+	display: inline-block;
+	line-height: 50px;
+	margin:0px 15px 0px 15px;
+}
+
+#main{
+	display: block;
+	text-align: center;
+}
+.mainleft{
+	width:250px;
+	height:332px;
+	display: inline-block;
+	vertical-align: top;
+	font-size:18px;
+}
+.mainleft ul{
+	margin: 0px, auto;
+	line-height: 30px;
+	text-decoration: underline;
+}
+.mainright{
+	width:600px;
+	display: inline-block;
+	font-size: 15px;
+}
+.mainright_bottom{
+	font-size: 20px;
+	line-height: 30px;
+	font-style: italic;
+}
+/*----------------------------------------------------*/
+#explan{
+	background-color: #ffffff;
+	color:black;
+	text-align: center;
+}
+.explan_top{
+	background-color: #73a7d5;
+	height:10px;
+}
+.explan_left_head{
+	font-size: 20px;
+	line-height: 0px;
+	font-weight: bold;
+
+}
+.explan_right_head{
+	font-size: 20px;
+	line-height: 0px;
+	font-weight: bold;
+}
+
+.explan_left{
+	width:360px;
+	display: inline-block;
+	vertical-align: top;
+	margin:10px;
+}
+.explan_right{
+	width:360px;
+	display: inline-block;
+	margin:10px;
+}
+
+.explan_left p{
+	margin-bottom: 0px;
+}
+
+.explan_right p{
+	margin-bottom: 0px;
+}
+.explan_left ul{
+	margin-top: 0px;
+}
+.explan_right ul{
+	margin-top: 0px;
+}
+/*----------------------------------------------------*/
+#sub{
+	background: linear-gradient(#285983,#245076);
+	text-align: center;
+	color:#77aad7;
+
+}
+.sub_top p{
+	display: inline-block;
+	margin:40px 20px 10px 20px;
+	font-size: 17px;
+}
+.sub_bottom{
+	font-size: 12px;
+	padding-bottom: 10px;
+}
