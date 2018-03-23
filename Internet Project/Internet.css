@@ -1,6 +1,7 @@
 #background{
 	font-family: Arial, Helvetica, sans-serif;
-	width:970px;
+	width:1000px;
+	overflow: visible;
 }
 #head{
 	height:80px;
@@ -36,7 +37,6 @@
 	margin-bottom: 0px;
 }
 /*-------------------------------------------------------------------------*/
-
 .leftbanner{
 	display: inline-block;
 	width:240px;
@@ -146,7 +146,9 @@
 	vertical-align: top;
 
 }
-
+.top{
+	display: inline-block;
+}
 .top p{
 	display: inline-block;
 	vertical-align: top;
@@ -158,6 +160,7 @@
 	background-color: grey;
 	width: 670px;
 	margin: 10px 0px 0px 0px;
+	display: inline-block;
 }
 
 .topright{
@@ -189,7 +192,9 @@
 }
 /*-------------------------------------------------------------------------*/
 .main{
-	padding-right:15px;
+	width:680px;
+	display: inline-block;
+	height: 500px;
 }
 
 .main h3{
