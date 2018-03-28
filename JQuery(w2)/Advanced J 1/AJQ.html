@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name ="description" content="Users Proejct has been created">
+	<title>Users Project</title>
+	<style type="text/css">
+		*{
+			text-align: left;
+			width: 500px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+				$('table tbody').append("<tr><td>"+ $('#name_first').val() +"</td><td>"+ $('#name_last').val()+"</td><td>"+ $('#email_address').val() +"</td><td>"+ $('#contact').val()+"</td></tr>");
+				return false;
+			})
+
+		})
+	</script>
+</head>
+<body>
+	<table>
+		<thead>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email Address</th>
+			<th>Contact#</th>
+		</thead>
+		<tbody></tbody>
+	</table>
+
+
+	<form action="" method="get">
+		<h1>Add User</h1>
+		<hr>
+		<label for="name_first">First Name:</label>
+		<input type="text" id="name_first"><br>
+		<label for="name_last">Last Name:</label>
+		<input type="text" id="name_last" name="name_last"><br>
+		<label for="email_address">Email Address:</label>
+		<input type="text" id="email_address" name="email_address"><br>
+		<label for="contact">Contact #:</label>
+		<input type="text" id="contact" name="contact"><br>
+		<br>
+		<input type="submit" value="Add User">
+	</div>
+</body>
+</html>

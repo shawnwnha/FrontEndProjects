@@ -1,13 +1,14 @@
 
 $(document).ready(function(){
+	
+	var x = $('img').attr("src");
 
-	$("img").click(function(){
-		$(this).css("visibility","hidden");
+	$("img").mouseenter(function(){
+		var y = $(this).attr("data-alt-src");	
+		$(this).attr("src",y);
 	})
-
-
-	$("#restore").click(function(){
-		$("img").css("visibility","visible");
+	$("img").mouseleave(function(){	
+		$(this).attr("src",x);
 	})
 
 
