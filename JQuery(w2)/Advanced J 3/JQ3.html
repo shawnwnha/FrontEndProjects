@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" , cotent="contact card has been created">
+	<title>Contact Card</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="JQ3.css">
+	<script type="text/javascript">
+
+		$(document).ready(function(){	
+
+			$('form').submit(function(){
+
+				var newdiv="<div class='card'><h1>"+ $('#first_name').val()+" "+$('#last_name').val()+"</h1><p>Click for description</p><h4>"+$('#description').val()+"</h4></div>";
+
+				$('#right').append(newdiv);
+				$('h4').hide();
+			
+				return false;
+			});
+
+			$(document).on('click','p',function(){
+				$(this).siblings('h4').show();
+				$(this).siblings('h1').remove();
+				$(this).remove();
+			});
+
+		})
+	</script>
+</head>
+<body>
+	<div id ="background">
+		<form id="form1">
+			<label for="first_name">First Name:</label>
+			<input type="text" id="first_name" name="first_name">
+			<br>
+			<label for="last_name">Last Name:</label>
+			<input type="text" id="last_name" name="last_name">
+			<br>
+			<label for="description">Description:</label>
+			<textarea id="description"></textarea>
+			<br>
+			<input type="submit" value="ADD USER">
+		</form>
+		<div id="right"></div>		
+	</div>
+</body>
+</html>
