@@ -7,16 +7,23 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="JQ3.css">
 	<script type="text/javascript">
-
+		
+		var x = [];
+		var count = 0;
 		$(document).ready(function(){	
+		
 
 			$('form').submit(function(){
 
-				var newdiv="<div class='card'><h1>"+ $('#first_name').val()+" "+$('#last_name').val()+"</h1><p>Click for description</p><h4>"+$('#description').val()+"</h4></div>";
+				var newdiv="<div class='card'><h1>"+ $('#first_name').val()+" "+$('#last_name').val()+"</h1><p>Click for description</p><h4 class id ="+count+">+$('#description').val()"+"</h4></div>";
+
+				x.push($('#description').val());
 
 				$('#right').append(newdiv);
 				$('h4').hide();
-			
+				
+				count++;
+
 				return false;
 			});
 
