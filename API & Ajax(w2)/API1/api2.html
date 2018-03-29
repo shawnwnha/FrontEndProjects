@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="API second chapter">
+	<title>API 2</title>
+	<style type ="text/css">
+		#pokemon{
+			width:800px;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		#pokedex{
+			width:300px;
+			height: 600px;
+			padding: 3px;
+			display: inline-block;
+			text-align: center;
+			border:10px solid red;
+
+		}
+
+
+
+
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			for(var i = 1; i<153;i++){
+				$('#pokemon').append("<img id="+i+" src='https://pokeapi.co/media/img/"+i+".png/'>");
+			}
+
+			$(document).on('click','img',function(){
+				var y = $(this).attr('id')//so far works.
+				$.get("https://pokeapi.co/api/v2/pokemon/"+y+"/",function(res){
+					console.log(res);
+					var name = res.forms[0].name;
+					var types = res.types[0].type["name"];
+					var height = res.height;
+					var weight = res.weight;
+					var image ="<img id ="+y+" src='https://pokeapi.co/media/img/"+y+".png/'>"
+					console.log(name,types,height,weight,image)
+					$('#pokedex').html("<h1>"+name+"</h1>"+image+"<h3>types</h3><ul><li>"+types+"</li></ul><h3>height</h3><p>"+height+"</p><h3>weight</h3><p>"+weight+"</p>");
+				},"json")
+				 
+			})
+		})
+	</script>
+</head>
+<body>
+	<div id = "pokemon"></div>
+	<div id = "pokedex"></div>
+</body>
+</html>

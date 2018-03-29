@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="API Third chapter">
+	<title>API 3</title>
+	<style type ="text/css">
+		
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		// ---------------------------------------------ID for Weather API
+		var myID= "&appid=14ccf9e2bf5a9596e10ada5993085b18"
+		// --------------------------------------------------
+
+		$(document).ready(function(){
+			$('form').submit(function(){
+				var city = $('#textInput').val();
+				var address = "http://api.openweathermap.org/data/2.5/weather?q="+city+myID;
+
+				$.get(address,function(res){
+					console.log(res);
+					var temperature1 = res.main["temp"];
+					var celsius = Math.floor((temperature1-32)*(5/9));
+					$('#temperature').html("<h1>Temperature:"+temperature1+"℉ or "+ celsius+"℃</h1><h3>City:"+city+"</h3>");
+				},"json")
+
+				
+				return false;
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="textInput">
+		<input type="submit" value="SEE THE TEMPERATURE">
+	</form>
+
+	<div id ="cityName"></div>
+	<div id ="temperature"></div>
+</body>
+</html>
