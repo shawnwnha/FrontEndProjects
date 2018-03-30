@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="API second chapter">
+	<title>API 2</title>
+	<style type ="text/css">
+		img{
+			width:200px;
+			height:200px;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('img').click(function(){
+				var x = $(this).attr('id');
+
+				var address = 'https://anapioficeandfire.com/api/houses/'+x;
+
+				$.get(address,function(res){
+					var houseName= res.name;
+					var quotes = res.coatOfArms;
+					var types = [];
+					for(var i=0;i<res.titles.length;i++){
+						if(i==res.titles.length-1){
+							types+=res.titles[i]+". ";
+						}
+						else{
+							types+=res.titles[i]+", ";
+						}
+					}
+
+					console.log(res);
+
+					$('#house').html("<h1>House Details</h1><h2>Name:"+houseName+"</h2><h2>Words:"+quotes+"</h2><br><br><h3>Titles:"+types+"</h3>")
+				},'json')
+
+				// $('#house').html("<h1>House Details</h1><h3>Name:"++)
+			})
+
+
+		})
+	</script>
+</head>
+<body>
+	<img id = "362" src="stark.jpg" alt="stark">
+	<img id = "378" src="targaryen.jpg" alt="targaryen">
+	<img id = "229" src="lannister.jpg" alt="lannister">
+	<img id = "10" src="baratheon.png" alt="baratheon">
+	<div id = "house"></div>
+</body>
+</html>
+
+
+
+<!-- 
+
+378 - targaryen
+362 - stark 
+229 - lannister
+10 - baratheon  -->
