@@ -1,0 +1,73 @@
+#header{
+	background-color: black;
+	width: 900px;
+	height: 100px;
+	color: white;
+	text-align: center;
+}
+#header .score{
+	font-size: 20px;
+
+}
+#background{
+	background-color: black;
+	width:900px;
+	height:900px;
+	text-align: center;
+	padding-top: 10px;
+	position: fixed;
+}
+.wall{
+	display: inline-block;
+	width:9%;
+	height:9%;
+	background-color: grey;
+	margin:1px;
+}
+
+.path{
+	display: inline-block;
+	width:9%;
+	height:9%;
+	background-color: white;
+	margin: 1px;
+}
+.food{
+	display: inline-block;
+	width:9%;
+	height:9%;
+	background-color: white;
+	margin: 1px;
+	vertical-align: top;
+}
+
+.food img{
+	background-position: contain;
+	width:80%;
+	height: 80%
+}
+
+.char{
+	display: inline-block;
+	width:9%;
+	height:9%;
+	background-color: white;
+	margin: 1px;
+	vertical-align: top;
+}
+.char img{
+	background-position: contain;
+	width:80%;
+	height: 80%
+}
+
+.enemy{
+	display: inline-block;
+	background-image: url('pickle.gif');
+	background-size:cover;
+	width:9%;
+	height:9%;
+	background-color: white;
+	margin: 1px;
+	vertical-align: top;
+}

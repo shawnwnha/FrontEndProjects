@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Pacman Game!">
+	<title>Pacman</title>
+	<link rel='stylesheet' type='text/css' href="pacman.css">
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script type="text/javascript">
+
+		var position_player={
+			"x":1,
+			"y":1
+		}
+		var position_enemy ={
+			"x":7,
+			"y":8
+		}
+		var mat = [
+			[0,0,0,0,0,0,0,0,0,0],
+			[0,3,1,2,2,2,0,1,0,0],
+			[0,1,1,1,2,2,1,1,1,0],
+			[0,1,1,0,0,0,0,1,0,0],
+			[0,2,2,0,2,2,2,1,0,0],
+			[0,0,1,0,2,2,0,1,0,0],
+			[0,0,1,0,2,0,0,1,0,0],
+			[0,1,1,1,2,0,1,1,1,0],
+			[0,0,1,0,2,2,2,4,0,0],
+			[0,0,0,0,0,0,0,0,0,0]
+		];// 0 = wall, 1=path, 2 =food, 3= char, 4 = enemy
+
+		var score=0
+		var food_Amount = 0;
+
+		function foodAmount(){
+			for(var i = 0; i<mat.length;i++){
+				for(var j = 0; j<mat[i].length;j++){
+					if(mat[i][j]==2){
+						food_Amount++
+					}
+				}
+			}
+		}
+
+		function setHTML(){
+			var html ="";
+			for(var i = 0;i<mat.length;i++){
+				for(var j =0;j<mat[i].length;j++){
+					if(mat[i][j]==0){
+						html += '<div class ="wall"></div>'
+					}
+					else if(mat[i][j] ==1){
+						html += '<div class ="path"></div>'
+					}
+					else if(mat[i][j] ==2){
+						html += '<div class ="food"><img src="pizza.png"></div>'
+					}
+					else if(mat[i][j]==3){
+						html+='<div class ="char"><img src="dog.gif"></div>'
+					}
+					else if(mat[i][j]==4){
+
+						html+='<div class ="enemy"></div>'
+					}
+				}
+			}
+			$('#background').html(html);
+			$('.score').html("Score: "+score)
+		}
+
+		function scoreCount(){
+			if(mat[position_player.y][position_player.x]==2){
+				score++;
+				$('.score').css('color','red')
+				$('.score').css('font-size','50px')
+			}
+		}
+
+			
+		$(document).ready(function(){
+			setHTML();	
+			foodAmount();	
+
+		})
+
+
+		$(document).on('keydown',function(e){
+			if(e.keyCode == 37 && mat[position_player.y][position_player.x-1]!==0){
+				mat[position_player.y][position_player.x]=1;
+				position_player.x--;
+
+			}
+			else if(e.keyCode ==39 && mat[position_player.y][position_player.x+1]!==0){
+				mat[position_player.y][position_player.x]=1;
+				position_player.x++;
+			}
+			else if (e.keyCode ==38 && mat[position_player.y-1][position_player.x]!==0){
+				mat[position_player.y][position_player.x]=1;
+				position_player.y--;
+			}
+			else if(e.keyCode ==40 && mat[position_player.y+1][position_player.x]!==0){
+				mat[position_player.y][position_player.x]=1;
+				position_player.y++;
+			}
+			$('.score').css('color','white')
+			$('.score').css('font-size','20px')
+			scoreCount();
+			mat[position_player.y][position_player.x]=3;
+			setHTML();
+
+			if(score==food_Amount&& score!== 0){
+				alert('GameOver');
+			}			
+		})
+
+	</script>
+</head>
+<body>
+	<div id = 'header'>
+		<div class='score'></div>
+	</div>
+	<div id = 'background'></div>
+</body>
+</html>
